@@ -14,7 +14,7 @@ class MyAppBar extends StatelessWidget {
           height: MediaQuery.of(context).padding.top,
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: onTap,
           child: Container(
               color: Colors.purple[800],
               height: MediaQuery.of(context).size.height * .20,

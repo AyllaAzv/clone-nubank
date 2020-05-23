@@ -3,27 +3,35 @@ import 'package:flutter/material.dart';
 
 class PageViewApp extends StatelessWidget {
   final ValueChanged<int> onChanged;
+  final double top;
+  final GestureDragUpdateCallback onPanUpdate;
+  final bool showMenu;
 
-  PageViewApp({this.onChanged});
+  PageViewApp({this.onChanged, this.top, this.onPanUpdate, this.showMenu});
 
   @override
   Widget build(BuildContext context) {
     double _screenHeigth = MediaQuery.of(context).size.height;
 
-    return Positioned(
-      top: _screenHeigth * .19,
+    return AnimatedPositioned(
+      duration: Duration(microseconds: 150),
+      curve: Curves.easeOut,
+      top: top,
       height: _screenHeigth * .55,
       right: 0,
       left: 0,
-      child: PageView(
-        onPageChanged: onChanged,
-        physics: BouncingScrollPhysics(),
-        children: <Widget>[
-          CardApp(),
-          CardApp(),
-          CardApp(),
-        ],
-      ),
+      child: GestureDetector(
+        onPanUpdate: onPanUpdate,
+        child: PageView(
+          onPageChanged: onChanged,
+          physics: showMenu ? NeverScrollableScrollPhysics() : BouncingScrollPhysics(),
+          children: <Widget>[
+            CardApp(),
+            CardApp(),
+            CardApp(),
+          ],
+        ),
+      )
     );
   }
 }
