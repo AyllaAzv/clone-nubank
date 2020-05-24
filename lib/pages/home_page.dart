@@ -1,10 +1,10 @@
-import 'package:clone_nubank/widgets/bottom_menu.dart';
-import 'package:clone_nubank/widgets/item_menu.dart';
-import 'package:clone_nubank/widgets/item_menu_bottom.dart';
-import 'package:clone_nubank/widgets/menu_app.dart';
+import 'package:clone_nubank/widgets/bottom_menu/bottom_menu.dart';
+import 'package:clone_nubank/widgets/menu/item_menu.dart';
+import 'package:clone_nubank/widgets/bottom_menu/item_menu_bottom.dart';
+import 'package:clone_nubank/widgets/menu/menu_app.dart';
 import 'package:clone_nubank/widgets/my_app_bar.dart';
-import 'package:clone_nubank/widgets/my_dots_app.dart';
-import 'package:clone_nubank/widgets/page_view_app.dart';
+import 'package:clone_nubank/widgets/page_view/my_dots_app.dart';
+import 'package:clone_nubank/widgets/page_view/page_view_app.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {

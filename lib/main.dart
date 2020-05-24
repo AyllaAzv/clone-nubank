@@ -1,4 +1,4 @@
-import 'package:clone_nubank/pages/home_page.dart';
+import 'package:clone_nubank/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -6,6 +6,8 @@ void main() {
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
       statusBarBrightness: Brightness.dark,
+      statusBarColor: Colors.transparent,
+      systemNavigationBarColor: Colors.purple[800],
     ),
   );
 
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme:
           ThemeData(primarySwatch: Colors.purple, brightness: Brightness.dark),
-      home: HomePage(),
+      home: SplashPage(),
     );
   }
 }
