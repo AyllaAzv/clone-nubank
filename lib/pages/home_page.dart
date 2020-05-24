@@ -1,3 +1,4 @@
+import 'package:clone_nubank/widgets/bottom_menu.dart';
 import 'package:clone_nubank/widgets/item_menu.dart';
 import 'package:clone_nubank/widgets/item_menu_bottom.dart';
 import 'package:clone_nubank/widgets/menu_app.dart';
@@ -64,6 +65,7 @@ class _HomePageState extends State<HomePage> {
               double positionTopLimit = _screenHeigth * .19;
               double midlePosition = positionBottomLimit - positionTopLimit;
               midlePosition = midlePosition / 2;
+
               setState(() {
                 _yPosition += details.delta.dy;
 
@@ -101,46 +103,7 @@ class _HomePageState extends State<HomePage> {
             top: _screenHeigth * .74,
             showMenu: _showMenu,
           ),
-          AnimatedPositioned(
-            duration: Duration(microseconds: 200),
-            bottom: !_showMenu ? 0 + _screenHeigth * .01 : 0,
-            left: 0,
-            right: 0,
-            child: AnimatedOpacity(
-              duration: Duration(microseconds: 200),
-              opacity: _showMenu ? 0 : 1,
-              child: Container(
-                height: _screenHeigth * .21,
-                child: ListView(
-                  padding: EdgeInsets.symmetric(horizontal: 16),
-                  physics: BouncingScrollPhysics(),
-                  scrollDirection: Axis.horizontal,
-                  children: <Widget>[
-                    ItemMenuBottom(
-                        icon: Icons.person_add, text: 'Indicar amigos'),
-                    ItemMenuBottom(
-                        icon: Icons.phone_android, text: 'Recarga de celular'),
-                    ItemMenuBottom(icon: Icons.chat, text: 'Cobrar'),
-                    ItemMenuBottom(
-                        icon: Icons.monetization_on, text: 'Empréstimos'),
-                    ItemMenuBottom(icon: Icons.attach_money, text: 'Depositar'),
-                    ItemMenuBottom(
-                        icon: Icons.attach_money, text: 'Transferir'),
-                    ItemMenuBottom(
-                        icon: Icons.attach_money, text: 'Ajustar limite'),
-                    ItemMenuBottom(icon: Icons.attach_money, text: 'Me ajuda'),
-                    ItemMenuBottom(icon: Icons.attach_money, text: 'Pagar'),
-                    ItemMenuBottom(
-                        icon: Icons.attach_money, text: 'Bloquear cartão'),
-                    ItemMenuBottom(
-                        icon: Icons.attach_money, text: 'Cartão virtual'),
-                    ItemMenuBottom(
-                        icon: Icons.attach_money, text: 'Organizar atalhos'),
-                  ],
-                ),
-              ),
-            ),
-          ),
+          BottomMenu(showMenu: _showMenu),
         ],
       ),
     );

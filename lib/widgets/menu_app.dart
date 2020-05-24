@@ -19,6 +19,7 @@ class MenuApp extends StatelessWidget {
         child: Container(
           height: MediaQuery.of(context).size.height * 0.67,
           child: ListView(
+            physics: BouncingScrollPhysics(),
             children: <Widget>[
               Column(
                 children: <Widget>[
