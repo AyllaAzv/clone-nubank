@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class FirstCard extends StatelessWidget {
@@ -15,6 +16,7 @@ class FirstCard extends StatelessWidget {
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Padding(
                           padding: EdgeInsets.all(20),
@@ -79,7 +81,9 @@ class FirstCard extends StatelessWidget {
                               ),
                             ],
                           ),
-                        )
+                        ),
+                        SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.05),
                       ],
                     ),
                   ),
@@ -130,7 +134,10 @@ class FirstCard extends StatelessWidget {
                           'Compra mais recente em Amazon-Marketplace no valor de R\$ 100,00',
                           overflow: TextOverflow.ellipsis,
                           maxLines: 2,
-                          style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w500, fontSize: 14),
+                          style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 14),
                         ),
                       ),
                       SizedBox(width: 18),
